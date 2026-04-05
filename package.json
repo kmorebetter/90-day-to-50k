@@ -1,0 +1,24 @@
+{
+  "name": "90-day-to-50k",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmorebetter/90-day-to-50k.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kmorebetter/90-day-to-50k/issues"
+  },
+  "homepage": "https://github.com/kmorebetter/90-day-to-50k#readme",
+  "dependencies": {
+    "resend": "^6.10.0"
+  }
+}

@@ -705,6 +705,164 @@
   .faq-answer-inner p { margin-bottom: 10px; }
   .faq-answer-inner p:last-child { margin-bottom: 0; }
 
+  /* ── EMAIL CAPTURE ── */
+  .skills-section {
+    background: var(--accent);
+    padding: 80px 0;
+  }
+
+  .skills-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .skills-left {}
+
+  .skills-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7ab891;
+    margin-bottom: 14px;
+  }
+
+  .skills-left h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(26px, 4vw, 36px);
+    font-weight: 400;
+    line-height: 1.2;
+    color: #fff;
+    margin-bottom: 18px;
+  }
+
+  .skills-left p {
+    font-size: 16px;
+    color: #a8c8b4;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .skills-list {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+  }
+
+  .skills-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: #c8ddd2;
+    line-height: 1.5;
+  }
+
+  .skills-list li::before {
+    content: '→';
+    color: #7ab891;
+    font-size: 13px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .skills-form-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 36px;
+  }
+
+  .skills-form-box h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.25;
+  }
+
+  .skills-form-box p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 24px;
+    line-height: 1.55;
+  }
+
+  .skills-form {
+    display: grid;
+    gap: 12px;
+  }
+
+  .skills-form input {
+    width: 100%;
+    padding: 13px 16px;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .skills-form input:focus {
+    border-color: var(--accent);
+  }
+
+  .skills-form input::placeholder { color: #aaa; }
+
+  .skills-form button {
+    width: 100%;
+    padding: 14px;
+    background: var(--accent);
+    color: #fff;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+    letter-spacing: 0.01em;
+  }
+
+  .skills-form button:hover { background: #1e4a2d; }
+  .skills-form button:disabled { opacity: 0.6; cursor: default; }
+
+  .skills-form-note {
+    font-size: 12px;
+    color: #aaa;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  .skills-success {
+    display: none;
+    text-align: center;
+    padding: 12px 0;
+  }
+
+  .skills-success p {
+    font-size: 15px;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 4px !important;
+  }
+
+  .skills-success span {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  @media (max-width: 640px) {
+    .skills-inner { grid-template-columns: 1fr; gap: 36px; }
+    .skills-section { padding: 60px 0; }
+    .skills-form-box { padding: 28px 24px; }
+  }
+
   /* ── BOTTOM CTA ── */
   .bottom-cta {
     padding: 96px 0;
@@ -1272,6 +1430,43 @@
     </div>
   </section>
 
+  <!-- EMAIL CAPTURE -->
+</div>
+
+<section class="skills-section">
+  <div class="container">
+    <div class="skills-inner">
+      <div class="skills-left">
+        <div class="skills-eyebrow">Free download</div>
+        <h2>Start saving time today — before we've even spoken.</h2>
+        <p>We put together a small pack of Claude Code skills that you can drop in and start using immediately. No setup. No configuration. Just open Claude Code and they're there.</p>
+        <ul class="skills-list">
+          <li>Skill Miner — extract reusable skills from any session automatically</li>
+          <li>Pre-Meeting Brief — instant context brief before any call</li>
+          <li>Better Communicator — sharpen any message or email in seconds</li>
+          <li>Meeting to Action — transcript to structured task list in 90 seconds</li>
+          <li>Weekly Ops Summary — your week, distilled and waiting for you Monday morning</li>
+        </ul>
+      </div>
+      <div class="skills-form-box">
+        <h3>Get the free skills pack</h3>
+        <p>Drop your email and we'll send it straight to your inbox. Nothing else — no newsletter, no sequences.</p>
+        <form class="skills-form" id="skills-form">
+          <input type="text" name="firstName" placeholder="First name (optional)" autocomplete="given-name">
+          <input type="email" name="email" placeholder="Your email address" required autocomplete="email">
+          <button type="submit" id="skills-submit">Send me the pack →</button>
+          <p class="skills-form-note">Free. Instant. No strings.</p>
+        </form>
+        <div class="skills-success" id="skills-success">
+          <p>Check your inbox.</p>
+          <span>The skills pack is on its way. Most people have it set up within 10 minutes.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
   <!-- BOTTOM CTA -->
   <section class="bottom-cta" id="book">
     <h2>Tell us where your team's time is going</h2>
@@ -1312,6 +1507,40 @@
         answer.style.maxHeight = answer.scrollHeight + 'px';
       }
     });
+  });
+
+  // ── Skills form ──
+  document.getElementById('skills-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('skills-submit');
+    const form = e.target;
+    const email = form.email.value.trim();
+    const firstName = form.firstName.value.trim();
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, firstName }),
+      });
+
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('skills-success').style.display = 'block';
+      } else {
+        const data = await res.json();
+        btn.disabled = false;
+        btn.textContent = 'Send me the pack →';
+        alert(data.error || 'Something went wrong. Please try again.');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Send me the pack →';
+      alert('Something went wrong. Please try again.');
+    }
   });
 
   // ── Speed bar animation on scroll ──
