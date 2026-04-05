@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BetterStory — AI Systems That Replace Expensive Manual Work</title>
+<title>BetterStory — AI Systems Built for Your Business</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -18,7 +18,10 @@
     --border: #e2e0dc;
     --card-bg: #ffffff;
     --highlight: #f5f0e8;
+    --warm: #f9f6f0;
   }
+
+  html { scroll-behavior: smooth; }
 
   body {
     font-family: 'DM Sans', -apple-system, sans-serif;
@@ -35,40 +38,93 @@
     padding: 0 24px;
   }
 
-  /* HERO */
-  .hero {
-    padding: 80px 0 60px;
+  /* ── NAV ── */
+  nav {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
   }
 
-  .hero-label {
+  nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-logo {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-cta {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid var(--accent);
+    padding: 8px 18px;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .nav-cta:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 80px 0 64px;
+  }
+
+  .hero-eyebrow {
     font-size: 13px;
     font-weight: 500;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
 
   .hero h1 {
     font-family: 'DM Serif Display', serif;
-    font-size: clamp(32px, 5vw, 48px);
-    line-height: 1.15;
+    font-size: clamp(34px, 5.5vw, 52px);
+    line-height: 1.1;
     font-weight: 400;
-    margin-bottom: 24px;
-    max-width: 600px;
+    margin-bottom: 28px;
+    max-width: 620px;
   }
 
-  .hero-sub {
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-body {
     font-size: 19px;
     color: var(--muted);
-    max-width: 540px;
-    line-height: 1.6;
-    margin-bottom: 36px;
+    max-width: 560px;
+    line-height: 1.65;
+    margin-bottom: 16px;
   }
 
-  .hero-cta-row {
+  .hero-body strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .hero-note {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 40px;
+    font-style: italic;
+  }
+
+  .cta-group {
     display: flex;
-    gap: 16px;
+    gap: 20px;
     align-items: center;
     flex-wrap: wrap;
   }
@@ -77,534 +133,872 @@
     display: inline-block;
     background: var(--accent);
     color: #fff;
-    padding: 14px 28px;
+    padding: 15px 30px;
     font-size: 15px;
     font-weight: 500;
     text-decoration: none;
-    border-radius: 6px;
-    transition: background 0.2s;
+    border-radius: 5px;
+    transition: background 0.2s, transform 0.1s;
     letter-spacing: 0.01em;
   }
 
-  .btn-primary:hover { background: #1e4a2d; }
+  .btn-primary:hover { background: #1e4a2d; transform: translateY(-1px); }
+  .btn-primary:active { transform: translateY(0); }
 
-  .btn-secondary {
-    display: inline-block;
-    color: var(--muted);
+  .btn-ghost {
     font-size: 15px;
+    color: var(--muted);
     text-decoration: none;
-    padding: 14px 4px;
     transition: color 0.2s;
   }
 
-  .btn-secondary:hover { color: var(--ink); }
+  .btn-ghost:hover { color: var(--ink); }
 
-  /* WEDGE SHOWCASE */
-  .showcase {
-    padding: 60px 0;
+  /* ── TENSION STRIP ── */
+  .tension {
+    background: var(--warm);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 48px 0;
+    margin: 0 0 80px;
   }
 
-  .showcase-label {
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 12px;
+  .tension .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
   }
 
-  .showcase h2 {
+  .tension-item {
+    text-align: left;
+  }
+
+  .tension-num {
     font-family: 'DM Serif Display', serif;
-    font-size: clamp(24px, 4vw, 34px);
-    font-weight: 400;
-    margin-bottom: 32px;
-    line-height: 1.25;
-  }
-
-  .wedge-tabs {
-    display: flex;
-    gap: 0;
-    border-bottom: 2px solid var(--border);
-    margin-bottom: 32px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .wedge-tab {
-    padding: 12px 20px;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--muted);
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    margin-bottom: -2px;
-    white-space: nowrap;
-    transition: color 0.2s, border-color 0.2s;
-    background: none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    font-family: inherit;
-  }
-
-  .wedge-tab:hover { color: var(--ink); }
-
-  .wedge-tab.active {
+    font-size: 36px;
     color: var(--accent);
-    border-bottom-color: var(--accent);
-  }
-
-  .wedge-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 36px;
-    display: none;
-    animation: fadeIn 0.3s ease;
-  }
-
-  .wedge-card.active { display: block; }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .wedge-card h3 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 22px;
-    font-weight: 400;
+    line-height: 1;
     margin-bottom: 8px;
   }
 
-  .wedge-card .wedge-tagline {
-    font-size: 15px;
-    color: var(--accent);
-    font-weight: 500;
-    margin-bottom: 20px;
-  }
-
-  .wedge-card p {
-    margin-bottom: 16px;
-    color: var(--ink);
-  }
-
-  .wedge-card p:last-child { margin-bottom: 0; }
-
-  .wedge-stat {
-    background: var(--highlight);
-    padding: 16px 20px;
-    border-radius: 6px;
-    margin: 20px 0;
-    font-size: 15px;
-  }
-
-  .wedge-stat strong {
-    color: var(--accent);
-  }
-
-  .wedge-retainer {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border);
-    font-size: 15px;
+  .tension-label {
+    font-size: 14px;
     color: var(--muted);
+    line-height: 1.5;
   }
 
-  .wedge-retainer strong { color: var(--ink); }
-
-  /* PROOF */
-  .proof {
-    padding: 60px 0;
-  }
-
-  .proof-label {
-    font-size: 13px;
+  .tension-label strong {
+    color: var(--ink);
     font-weight: 500;
-    letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* ── SECTION COMMON ── */
+  section { padding: 72px 0; }
+
+  .section-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--accent);
     margin-bottom: 12px;
   }
 
-  .proof h2 {
+  .section-title {
     font-family: 'DM Serif Display', serif;
-    font-size: clamp(24px, 4vw, 34px);
+    font-size: clamp(26px, 4vw, 36px);
     font-weight: 400;
-    margin-bottom: 36px;
-    line-height: 1.25;
+    line-height: 1.2;
+    margin-bottom: 20px;
   }
 
+  .section-intro {
+    font-size: 17px;
+    color: var(--muted);
+    max-width: 560px;
+    line-height: 1.65;
+    margin-bottom: 48px;
+  }
+
+  /* ── WEDGE ── */
+  .wedge-block {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 48px;
+  }
+
+  .wedge-header {
+    padding: 36px 36px 28px;
+    border-bottom: 1px solid var(--border);
+    background: var(--warm);
+  }
+
+  .wedge-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 4px 10px;
+    border-radius: 3px;
+    margin-bottom: 16px;
+  }
+
+  .wedge-header h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(22px, 3.5vw, 28px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .wedge-header p {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 520px;
+    line-height: 1.6;
+  }
+
+  .wedge-body {
+    padding: 36px;
+  }
+
+  .wedge-pain {
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.65;
+    margin-bottom: 24px;
+  }
+
+  .wedge-stat-box {
+    background: var(--highlight);
+    border-left: 3px solid var(--accent);
+    padding: 18px 22px;
+    border-radius: 0 6px 6px 0;
+    margin: 24px 0;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .wedge-stat-box strong {
+    color: var(--accent);
+  }
+
+  .wedge-what-you-get {
+    margin: 28px 0;
+  }
+
+  .wedge-what-you-get h4 {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  .wedge-what-you-get ul {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+  }
+
+  .wedge-what-you-get li {
+    font-size: 15px;
+    color: var(--ink);
+    padding-left: 22px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .wedge-what-you-get li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 13px;
+    top: 1px;
+  }
+
+  .wedge-price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .wedge-price {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .price-label {
+    font-size: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  .price-number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .price-detail {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  .wedge-retainer-note {
+    background: var(--accent-light);
+    border-radius: 6px;
+    padding: 14px 18px;
+    font-size: 14px;
+    color: var(--accent);
+    line-height: 1.5;
+    max-width: 340px;
+  }
+
+  .wedge-retainer-note strong {
+    font-weight: 600;
+  }
+
+  /* ── OTHER BUILDS ── */
+  .builds-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .build-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px;
+    transition: border-color 0.2s;
+  }
+
+  .build-card:hover {
+    border-color: var(--accent);
+  }
+
+  .build-icon {
+    font-size: 22px;
+    margin-bottom: 14px;
+  }
+
+  .build-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .build-card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* ── PROOF ── */
   .proof-grid {
     display: grid;
-    gap: 24px;
+    gap: 28px;
   }
 
   .proof-card {
     background: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 32px;
+    border-radius: 10px;
+    padding: 36px;
   }
 
-  .proof-card .proof-company {
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 10px;
-  }
-
-  .proof-card h3 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    line-height: 1.35;
-  }
-
-  .proof-card p {
-    color: var(--muted);
-    font-size: 15px;
-    margin-bottom: 12px;
-    line-height: 1.6;
-  }
-
-  .proof-card p:last-child { margin-bottom: 0; }
-
-  .proof-result {
-    font-weight: 500;
-    color: var(--ink);
-  }
-
-  /* ABOUT */
-  .about {
-    padding: 60px 0;
-  }
-
-  .about-inner {
+  .proof-header {
     display: flex;
-    gap: 40px;
     align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
   }
 
-  .about-text h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 28px;
-    font-weight: 400;
-    margin-bottom: 16px;
-    line-height: 1.25;
-  }
-
-  .about-text p {
-    color: var(--muted);
-    margin-bottom: 14px;
-    font-size: 16px;
-    line-height: 1.65;
-  }
-
-  /* BOTTOM CTA */
-  .bottom-cta {
-    padding: 80px 0 100px;
-    text-align: left;
-  }
-
-  .bottom-cta h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(26px, 4vw, 36px);
-    font-weight: 400;
-    margin-bottom: 16px;
-    line-height: 1.25;
-  }
-
-  .bottom-cta p {
-    color: var(--muted);
-    font-size: 17px;
-    margin-bottom: 32px;
-    max-width: 500px;
-  }
-
-  .bottom-cta .hero-cta-row {
-    justify-content: flex-start;
-  }
-
-  /* HOW IT WORKS */
-  .how {
-    padding: 60px 0;
-  }
-
-  .how-label {
-    font-size: 13px;
-    font-weight: 500;
+  .proof-badge {
+    font-size: 11px;
+    font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 12px;
+    background: var(--accent-light);
+    padding: 4px 10px;
+    border-radius: 3px;
+    white-space: nowrap;
+    margin-top: 2px;
   }
 
-  .how h2 {
+  .proof-card h3 {
     font-family: 'DM Serif Display', serif;
-    font-size: clamp(24px, 4vw, 34px);
+    font-size: 20px;
     font-weight: 400;
-    margin-bottom: 36px;
-    line-height: 1.25;
+    line-height: 1.3;
   }
 
+  .proof-before-after {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+
+  .proof-before, .proof-after {
+    padding: 16px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .proof-before {
+    background: #fdf2f2;
+    border-left: 3px solid #d97b7b;
+  }
+
+  .proof-after {
+    background: #f0f7f2;
+    border-left: 3px solid var(--accent);
+  }
+
+  .ba-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .proof-before .ba-label { color: #a05050; }
+  .proof-after .ba-label { color: var(--accent); }
+
+  .proof-card .proof-note {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+    font-style: italic;
+    margin-top: 4px;
+  }
+
+  /* ── HOW IT WORKS ── */
   .how-steps {
     display: grid;
     gap: 0;
-    position: relative;
+    counter-reset: steps;
   }
 
   .how-step {
-    display: flex;
-    gap: 24px;
-    padding: 28px 0;
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 20px;
+    padding: 32px 0;
     border-bottom: 1px solid var(--border);
+    align-items: start;
   }
 
   .how-step:last-child { border-bottom: none; }
 
   .step-num {
     font-family: 'DM Serif Display', serif;
-    font-size: 32px;
+    font-size: 36px;
     color: var(--accent);
-    opacity: 0.4;
+    opacity: 0.35;
     line-height: 1;
-    min-width: 36px;
-    padding-top: 2px;
+    text-align: center;
   }
 
   .step-content h3 {
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 700;
     margin-bottom: 6px;
+    padding-top: 4px;
   }
 
   .step-content p {
     font-size: 15px;
     color: var(--muted);
-    line-height: 1.55;
+    line-height: 1.6;
   }
 
-  /* RESPONSIVE */
+  /* ── ABOUT ── */
+  .about {
+    background: var(--warm);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .about-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .about-left h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(24px, 3.5vw, 32px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .about-left p {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+
+  .about-left p:last-child { margin-bottom: 0; }
+
+  .about-left strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .about-credentials {
+    display: grid;
+    gap: 14px;
+  }
+
+  .credential {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .credential-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-top: 8px;
+    flex-shrink: 0;
+  }
+
+  .credential-text {
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  .credential-text span {
+    color: var(--muted);
+    font-size: 14px;
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* ── BOTTOM CTA ── */
+  .bottom-cta {
+    padding: 96px 0;
+    text-align: center;
+  }
+
+  .bottom-cta h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 4.5vw, 42px);
+    font-weight: 400;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bottom-cta p {
+    font-size: 17px;
+    color: var(--muted);
+    margin-bottom: 12px;
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .bottom-cta .price-hint {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 36px;
+    font-style: italic;
+  }
+
+  .bottom-cta .cta-group {
+    justify-content: center;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 32px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  footer p {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  footer a {
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  footer a:hover { color: var(--ink); }
+
+  /* ── DIVIDER ── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0;
+  }
+
+  /* ── RESPONSIVE ── */
   @media (max-width: 640px) {
-    .hero { padding: 60px 0 40px; }
-    .wedge-card { padding: 24px; }
+    .hero { padding: 56px 0 48px; }
+    .tension .container { grid-template-columns: 1fr; gap: 24px; }
+    .tension { padding: 40px 0; margin-bottom: 56px; }
+    .builds-grid { grid-template-columns: 1fr; }
+    .proof-before-after { grid-template-columns: 1fr; }
+    .about-inner { grid-template-columns: 1fr; gap: 36px; }
+    .wedge-header, .wedge-body { padding: 24px; }
+    .wedge-price-row { flex-direction: column; align-items: flex-start; }
+    .wedge-retainer-note { max-width: 100%; }
     .proof-card { padding: 24px; }
-    .wedge-tab { padding: 10px 14px; font-size: 13px; }
-    .about-inner { flex-direction: column; gap: 24px; }
+    .proof-header { flex-direction: column; gap: 10px; }
+    section { padding: 56px 0; }
   }
 </style>
 </head>
 <body>
 
-<div class="container">
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <a href="/" class="nav-logo">BetterStory</a>
+    <a href="https://calendly.com/kmo-betterstory/discovery" class="nav-cta">Book a call</a>
+  </div>
+</nav>
 
-  <!-- HERO -->
+<!-- HERO -->
+<div class="container">
   <section class="hero">
-    <div class="hero-label">BetterStory</div>
-    <h1>I build AI systems that replace expensive manual work</h1>
-    <p class="hero-sub">Fixed price. Delivered in weeks, not months. Every system I build is designed to keep compounding after launch — so you never go back to the old way.</p>
-    <div class="hero-cta-row">
-      <a href="#book" class="btn-primary" onclick="document.querySelector('.bottom-cta').scrollIntoView({behavior:'smooth'});return false;">Book a discovery call</a>
-      <a href="mailto:kmo@betterstory.co" class="btn-secondary">or email me directly →</a>
+    <div class="hero-eyebrow">Kerry Morrison · BetterStory</div>
+    <h1>Your meetings are full of decisions.<br><em>Most of them disappear.</em></h1>
+    <p class="hero-body">
+      I build AI systems that capture what actually happens in your business and turn it into action. <strong>Fixed price. Delivered in weeks.</strong> Built to keep running long after launch.
+    </p>
+    <p class="hero-note">Starting at $4,500 — no procurement cycle, no six-month engagement</p>
+    <div class="cta-group">
+      <a href="https://calendly.com/kmo-betterstory/discovery" class="btn-primary">Book a 30-minute call</a>
+      <a href="mailto:kmo@betterstory.co" class="btn-ghost">or email me directly →</a>
     </div>
   </section>
+</div>
 
-  <!-- WEDGE SHOWCASE -->
-  <section class="showcase">
-    <div class="showcase-label">What I build</div>
-    <h2>Four systems. Each one saves you thousands per month.</h2>
-
-    <div class="wedge-tabs" role="tablist">
-      <button class="wedge-tab active" role="tab" data-wedge="proposals" aria-selected="true">Proposal Machine</button>
-      <button class="wedge-tab" role="tab" data-wedge="revenue" aria-selected="false">Revenue Leak Finder</button>
-      <button class="wedge-tab" role="tab" data-wedge="ops" aria-selected="false">Ops Audit</button>
-      <button class="wedge-tab" role="tab" data-wedge="meetings" aria-selected="false">Meeting Intelligence</button>
-    </div>
-
-    <!-- PROPOSAL MACHINE -->
-    <div class="wedge-card active" id="proposals">
-      <h3>The Proposal Machine</h3>
-      <div class="wedge-tagline">From messy brief to polished proposal in 3 minutes</div>
-      <p>Your team writes proposals by hand. Every single one. An RFP lands, someone disappears for a day, and out comes a doc that may or may not match what the client actually asked for.</p>
-      <p>I build a system that takes a brief, RFP, or client email and generates a structured proposal draft — scope, timeline, pricing framework, risk flags — before your second coffee.</p>
-      <div class="wedge-stat">
-        <strong>The math:</strong> If a senior person bills at $200/hour and every proposal takes 6 hours, each one costs you $1,200 in unbilled time. Most services firms write 8-12 per month. That is $10,000-$14,000 in invisible cost.
-      </div>
-      <p>This is not a template. It learns your voice, your pricing model, your win patterns. It gets sharper every time you use it.</p>
-      <div class="wedge-retainer">
-        <strong>After launch:</strong> I tune the system to your voice, feed it your win/loss data, and optimize output based on what actually closes deals. That is the ongoing layer — $5,000/month to keep it compounding.
+<!-- TENSION STRIP -->
+<div class="tension">
+  <div class="container">
+    <div class="tension-item">
+      <div class="tension-num">5–10</div>
+      <div class="tension-label">
+        <strong>Hours lost per week</strong>
+        to action items that die in someone's notebook after every meeting
       </div>
     </div>
-
-    <!-- REVENUE LEAK FINDER -->
-    <div class="wedge-card" id="revenue">
-      <h3>The Revenue Leak Finder</h3>
-      <div class="wedge-tagline">See exactly where deals go to die in your pipeline</div>
-      <p>Your CRM has data. Lots of it. But nobody is reading the story it tells. Deals stall at the same stage. Follow-ups slip through cracks. Reps repeat the same mistakes quarter after quarter.</p>
-      <p>I take your pipeline data and build a system that identifies exactly where revenue is leaking — which stages have the longest dwell time, which behaviors correlate with closed-lost, where your team drops the ball on follow-up.</p>
-      <div class="wedge-stat">
-        <strong>The output:</strong> A plain-English report showing your three biggest revenue leaks and what to do about each one. Not a dashboard you will ignore. A diagnosis with a prescription.
-      </div>
-      <p>The number this produces — "$X leaking per quarter" — becomes the business case for everything that follows.</p>
-      <div class="wedge-retainer">
-        <strong>After launch:</strong> I build the monitoring layer that catches leaks in real time and alerts your team before deals go cold. The system pays for itself in recovered revenue. $5,000-$7,500/month.
+    <div class="tension-item">
+      <div class="tension-num">$1,200</div>
+      <div class="tension-label">
+        <strong>Cost of one proposal</strong>
+        when a senior person writes it by hand. Most firms write 8–12 a month.
       </div>
     </div>
-
-    <!-- OPS AUDIT -->
-    <div class="wedge-card" id="ops">
-      <h3>The Ops Audit</h3>
-      <div class="wedge-tagline">Find every process that is quietly costing you 5+ hours a week</div>
-      <p>You know your team is doing things manually that should be automated. You just do not know which ones cost the most or where to start.</p>
-      <p>I spend 48 hours inside your workflows — Slack, project management, email patterns, internal tools — and deliver a ranked report of every manual process bleeding more than 5 hours per week. Each one comes with a cost estimate and a build plan.</p>
-      <div class="wedge-stat">
-        <strong>What you get:</strong> A prioritized list of automation opportunities ranked by cost impact. Pick any one and I will build it in 2-4 weeks for a fixed price.
-      </div>
-      <p>The audit always surfaces more problems than a single build can solve. That is the point. You get a roadmap, not a one-off fix.</p>
-      <div class="wedge-retainer">
-        <strong>After launch:</strong> We work through the list together. One build per month, continuous optimization, new opportunities as they surface. $5,000-$7,500/month.
+    <div class="tension-item">
+      <div class="tension-num">8+</div>
+      <div class="tension-label">
+        <strong>Hours a week</strong>
+        spent on manual reporting that tells you what you already know, too late to act on it
       </div>
     </div>
+  </div>
+</div>
+
+<!-- WEDGE OFFER -->
+<div class="container">
+  <section>
+    <div class="section-eyebrow">The entry point</div>
+    <h2 class="section-title">Start with the thing that costs you the most</h2>
+    <p class="section-intro">Most of the work I do starts with one painful, specific problem. Fix that first. Then we build the layer that ties everything together.</p>
 
     <!-- MEETING INTELLIGENCE -->
-    <div class="wedge-card" id="meetings">
-      <h3>Meeting Intelligence</h3>
-      <div class="wedge-tagline">Every decision, commitment, and task — captured and assigned in 90 seconds</div>
-      <p>Your meetings generate ideas, decisions, and commitments. Most of them disappear. Someone says "let's circle back on that," and nobody writes it down. Two weeks later, the same conversation happens again.</p>
-      <p>I build the system that takes any meeting transcript and turns it into structured task lists — owners, deadlines, priorities, dependencies — before the meeting room is empty.</p>
-      <div class="wedge-stat">
-        <strong>The pain:</strong> Teams with 5 or more people in regular meetings lose 5-10 hours per week to action items that die in someone's notebook. That is one full employee's worth of lost output every month.
+    <div class="wedge-block">
+      <div class="wedge-header">
+        <div class="wedge-tag">Most common starting point</div>
+        <h3>Meeting Intelligence</h3>
+        <p>Every decision and commitment captured, structured, and assigned — before the meeting room is empty.</p>
       </div>
-      <p>This is not another transcription tool. It understands context, assigns ownership based on who said what, and flags when commitments conflict with existing deadlines.</p>
-      <div class="wedge-retainer">
-        <strong>After launch:</strong> The meeting system becomes the entry point for a full operating layer — tracking contacts, commitments, calendar, and email in one AI-powered system. No new UI to learn. No SaaS subscription to manage. $5,000/month.
+      <div class="wedge-body">
+        <p class="wedge-pain">You know how this goes. Someone says "let's circle back on that." Nobody writes it down. Two weeks later, the same conversation happens again. The meeting itself was fine — it's everything after the meeting that breaks down.</p>
+        <p class="wedge-pain">I build the system that takes any meeting transcript and turns it into a structured task list — owners, deadlines, priorities, dependencies — in 90 seconds. Not another transcription tool. It understands context, assigns ownership based on who said what, and flags when a new commitment conflicts with something already on the board.</p>
+
+        <div class="wedge-stat-box">
+          <strong>The math:</strong> A team of 8 people each in 6 hours of meetings per week. If 20% of commitments made in those meetings never get followed up on, that's roughly one person's full output disappearing every single month. What does one FTE cost you?
+        </div>
+
+        <div class="wedge-what-you-get">
+          <h4>What you get</h4>
+          <ul>
+            <li>A production system that processes transcripts from any meeting tool (Zoom, Teams, Google Meet, Fireflies, Otter)</li>
+            <li>Structured output: task list, owners, deadlines, open questions, decisions made</li>
+            <li>Integrates with the tools you already use — Slack, Notion, Asana, email</li>
+            <li>Built and delivered in 2–3 weeks</li>
+            <li>Full handoff: documentation, training, you own it</li>
+          </ul>
+        </div>
+
+        <div class="wedge-price-row">
+          <div class="wedge-price">
+            <div class="price-label">Fixed price</div>
+            <div class="price-number">$4,500</div>
+            <div class="price-detail">50% up front · 50% on delivery</div>
+          </div>
+          <div class="wedge-retainer-note">
+            <strong>After launch:</strong> I keep it running, tuned, and expanding for $5,000/month. The meeting layer becomes the entry point for a full operating system — contacts, commitments, calendar, email, all connected.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OTHER BUILDS -->
+    <div class="section-eyebrow" style="margin-bottom:16px;">Other systems I build</div>
+    <div class="builds-grid">
+      <div class="build-card">
+        <div class="build-icon">📄</div>
+        <h3>The Proposal Machine</h3>
+        <p>Brief to polished proposal in 3 minutes. Learns your voice, pricing model, and win patterns. Gets sharper every time you use it.</p>
+      </div>
+      <div class="build-card">
+        <div class="build-icon">📊</div>
+        <h3>Revenue Leak Finder</h3>
+        <p>Takes your pipeline data and shows exactly where deals go to die — which stages bleed, which behaviors predict closed-lost, where follow-up breaks down.</p>
+      </div>
+      <div class="build-card">
+        <div class="build-icon">⚙️</div>
+        <h3>Ops Audit + Build</h3>
+        <p>48 hours inside your workflows. A ranked report of every process bleeding 5+ hours a week. Then I build the highest-value fix, fixed price.</p>
+      </div>
+      <div class="build-card">
+        <div class="build-icon">🔌</div>
+        <h3>Custom Integration</h3>
+        <p>Your tools don't talk to each other and someone is manually moving data between them. I build the bridge, automate the flow, and eliminate the job.</p>
       </div>
     </div>
   </section>
 
+  <hr class="divider">
+
+  <!-- PROOF -->
+  <section>
+    <div class="section-eyebrow">Proof</div>
+    <h2 class="section-title">Systems I've built recently</h2>
+    <p class="section-intro">Three real builds. Real problems. What it looked like before, what it looks like now.</p>
+
+    <div class="proof-grid">
+
+      <div class="proof-card">
+        <div class="proof-header">
+          <div class="proof-badge">Health Tech</div>
+          <h3>AI adoption for a 200-person product team that had no idea where to start</h3>
+        </div>
+        <div class="proof-before-after">
+          <div class="proof-before">
+            <div class="ba-label">Before</div>
+            Scattered AI experiments. No shared practice. Senior people spending hours on tasks that should take minutes. Curiosity without direction.
+          </div>
+          <div class="proof-after">
+            <div class="ba-label">After</div>
+            Weekly hands-on sessions. Real workflows replaced with AI-assisted ones. Internal tools built and shipped. AI went from side project to embedded practice across the org.
+          </div>
+        </div>
+        <p class="proof-note">Built the training program, delivered the sessions, and built the internal tools. Ongoing engagement — this is what a retainer looks like in practice.</p>
+      </div>
+
+      <div class="proof-card">
+        <div class="proof-header">
+          <div class="proof-badge">Plant Services</div>
+          <h3>Replaced 8 hours a week of manual financial reporting with a system that runs itself</h3>
+        </div>
+        <div class="proof-before-after">
+          <div class="proof-before">
+            <div class="ba-label">Before</div>
+            Owner running financials in spreadsheets. Decisions made on gut feel. No visibility into margin by service line. Cash flow surprises.
+          </div>
+          <div class="proof-after">
+            <div class="ba-label">After</div>
+            Automated analysis pulling from existing tools. Margin by service line, visible daily. Cash flow risks surfaced early. 8+ hours per week returned to the owner.
+          </div>
+        </div>
+        <p class="proof-note">The system paid for itself in the first month. The owner now makes faster decisions with better data than they had access to before.</p>
+      </div>
+
+      <div class="proof-card">
+        <div class="proof-header">
+          <div class="proof-badge">Internal Build</div>
+          <h3>Replaced four SaaS subscriptions with one AI-powered system that knows everything</h3>
+        </div>
+        <div class="proof-before-after">
+          <div class="proof-before">
+            <div class="ba-label">Before</div>
+            Four separate tools: a CRM, a task manager, a contact database, and Notion. Data spread across all of them. Context lost constantly.
+          </div>
+          <div class="proof-after">
+            <div class="ba-label">After</div>
+            One conversational interface. Ask it anything — contacts, commitments, calendar, email. No UI to check. No dashboard to maintain. It updates itself as you work.
+          </div>
+        </div>
+        <p class="proof-note">This is the system I use myself. It's also the retainer layer I offer after the meeting intelligence build — because once you have one, you want the other.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
   <!-- HOW IT WORKS -->
-  <section class="how">
-    <div class="how-label">How it works</div>
-    <h2>Simple process. Fast results.</h2>
+  <section>
+    <div class="section-eyebrow">How it works</div>
+    <h2 class="section-title">Four steps. No ambiguity.</h2>
+
     <div class="how-steps">
       <div class="how-step">
         <div class="step-num">1</div>
         <div class="step-content">
-          <h3>Discovery call</h3>
-          <p>You tell me what is broken. I ask questions until I understand what it costs you. Takes 30 minutes.</p>
+          <h3>Discovery call — 30 minutes</h3>
+          <p>You tell me what is broken. I ask three questions: what is the most painful manual process in your business, what does it cost you every month, and would you pay a fixed price to eliminate it in two weeks? If the answer to the third question is yes, we move forward.</p>
         </div>
       </div>
       <div class="how-step">
         <div class="step-num">2</div>
         <div class="step-content">
-          <h3>One-page proposal</h3>
-          <p>Within 24 hours, you get a clear scope, timeline, and fixed price. No surprises. 50% up front, 50% on delivery.</p>
+          <h3>One-page proposal — within 24 hours</h3>
+          <p>The problem in your words, what I will build, what you get, timeline, fixed price, payment terms. No surprises. No scope creep. You either say yes or you don't. Both are fine.</p>
         </div>
       </div>
       <div class="how-step">
         <div class="step-num">3</div>
         <div class="step-content">
-          <h3>Build in 2-4 weeks</h3>
-          <p>I build your system and ship progress updates every few days. You see it working before you pay the second half.</p>
+          <h3>Build — 2 to 4 weeks</h3>
+          <p>I build your system and send a short progress update every few days. You see it working before you pay the second half. When I deliver, you own it completely — code, documentation, everything.</p>
         </div>
       </div>
       <div class="how-step">
         <div class="step-num">4</div>
         <div class="step-content">
-          <h3>Keep compounding</h3>
-          <p>After launch, I optimize and expand the system monthly. New use cases emerge. The system gets smarter. You never go back.</p>
+          <h3>The question I ask at delivery</h3>
+          <p>"Want me to keep going?" The system you have is working. New use cases are already visible. I can keep optimizing, expanding, and building on what we started — for $5,000/month. That question is worth $60,000 a year per client who says yes.</p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- PROOF -->
-  <section class="proof">
-    <div class="proof-label">Proof</div>
-    <h2>Systems I have built recently</h2>
-    <div class="proof-grid">
-
-      <div class="proof-card">
-        <div class="proof-company">Health Tech Company</div>
-        <h3>AI training and implementation for a 200-person product team</h3>
-        <p>The team was curious about AI but had no structured way to learn or adopt it. I designed and delivered a hands-on training program — weekly sessions, real workflows, production use cases — that turned curiosity into capability.</p>
-        <p class="proof-result">Result: AI adoption went from scattered experiments to embedded practice across the product org. Built internal tools that replaced manual processes their team had lived with for years.</p>
-      </div>
-
-      <div class="proof-card">
-        <div class="proof-company">Plant Services Business</div>
-        <h3>Financial analysis and ops automation for a growing services company</h3>
-        <p>The owner was running financials in spreadsheets and making decisions on gut feel. I built an AI-powered system that pulls data from their existing tools, runs analysis automatically, and surfaces the numbers that actually matter.</p>
-        <p class="proof-result">Result: Replaced 8+ hours per week of manual financial reporting. The owner now sees margin by service line, flags cash flow risks early, and makes faster decisions with better data.</p>
-      </div>
-
-      <div class="proof-card">
-        <div class="proof-company">Internal Build</div>
-        <h3>A chat-based CRM that replaced four SaaS subscriptions</h3>
-        <p>I built a personal operating system that tracks contacts, commitments, calendar, and email — all through a conversational interface. No UI to learn. No dashboard to check. Just ask it a question and get the answer.</p>
-        <p class="proof-result">Result: Replaced Notion, a CRM, a task manager, and a contact database with a single AI-powered system. Runs locally. No monthly fees. Updates itself as I work.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about">
-    <div class="about-inner">
-      <div class="about-text">
-        <h2>25 years of building things for clients. Now with a force multiplier.</h2>
-        <p>I spent two decades in agencies — creative director, strategist, builder of things that make businesses work better. I have written the briefs, managed the budgets, and presented to the C-suite.</p>
-        <p>Now I pair that experience with AI systems that would have taken a team of five and six months to build two years ago. I deliver them in weeks. Alone. For a fixed price.</p>
-        <p>That is not a pitch. It is just what happens when deep business experience meets the best tools available.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- BOTTOM CTA -->
-  <section class="bottom-cta" id="book">
-    <h2>Let's find the process that is costing you the most</h2>
-    <p>30-minute call. No pitch deck. I will ask what is broken, you will tell me, and we will figure out if I can fix it. Simple.</p>
-    <div class="hero-cta-row">
-      <a href="https://calendly.com/kmo-betterstory/discovery" class="btn-primary">Book a discovery call</a>
-      <a href="mailto:kmo@betterstory.co" class="btn-secondary">or email kmo@betterstory.co →</a>
-    </div>
-  </section>
-
 </div>
 
-<script>
-  // Wedge tab switching
-  const tabs = document.querySelectorAll('.wedge-tab');
-  const cards = document.querySelectorAll('.wedge-card');
+<!-- ABOUT -->
+<section class="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-left">
+        <h2>25 years building things for clients. Now with a force multiplier.</h2>
+        <p>I spent two decades in agencies — <strong>creative director, strategist, the person who figures out what is actually broken and fixes it.</strong> I have written the briefs, managed the budgets, presented to the C-suite, and shipped things that had to work.</p>
+        <p>Now I pair that experience with AI systems that would have taken a team of five and six months to build two years ago. I deliver them in weeks. Alone. For a fixed price.</p>
+        <p>That is not a pitch. It is what happens when deep business experience meets the best tools available. The client gets both — the business judgment and the build.</p>
+      </div>
+      <div class="about-credentials">
+        <div class="credential">
+          <div class="credential-dot"></div>
+          <div class="credential-text">
+            25 years in agencies and client-side
+            <span>Creative direction, strategy, operations — I have sat on both sides of the table</span>
+          </div>
+        </div>
+        <div class="credential">
+          <div class="credential-dot"></div>
+          <div class="credential-text">
+            Production AI systems, not demos
+            <span>Everything I build runs in production, handles real data, and keeps working after I leave</span>
+          </div>
+        </div>
+        <div class="credential">
+          <div class="credential-dot"></div>
+          <div class="credential-text">
+            Fixed price, not hourly
+            <span>I absorb the risk of estimation. You know what you're paying before we start.</span>
+          </div>
+        </div>
+        <div class="credential">
+          <div class="credential-dot"></div>
+          <div class="credential-text">
+            You own everything I build
+            <span>Code, documentation, credentials. No lock-in. No dependency on me to keep the lights on.</span>
+          </div>
+        </div>
+        <div class="credential">
+          <div class="credential-dot"></div>
+          <div class="credential-text">
+            Toronto-based, works everywhere
+            <span>Remote-first. Clients in Canada and the US.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const target = tab.dataset.wedge;
+<!-- BOTTOM CTA -->
+<div class="container">
+  <section class="bottom-cta" id="book">
+    <h2>Let's find the process that is costing you the most</h2>
+    <p>30-minute call. No pitch deck. I'll ask what is broken, you tell me, and we figure out if I can fix it.</p>
+    <p class="price-hint">Starts at $4,500 fixed price. Most clients pay for it in the first month.</p>
+    <div class="cta-group">
+      <a href="https://calendly.com/kmo-betterstory/discovery" class="btn-primary">Book a discovery call</a>
+      <a href="mailto:kmo@betterstory.co" class="btn-ghost">or email kmo@betterstory.co →</a>
+    </div>
+  </section>
+</div>
 
-      tabs.forEach(t => {
-        t.classList.remove('active');
-        t.setAttribute('aria-selected', 'false');
-      });
-      tab.classList.add('active');
-      tab.setAttribute('aria-selected', 'true');
-
-      cards.forEach(c => c.classList.remove('active'));
-      document.getElementById(target).classList.add('active');
-    });
-  });
-
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-</script>
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>© 2026 BetterStory · Kerry Morrison</p>
+    <a href="mailto:kmo@betterstory.co">kmo@betterstory.co</a>
+  </div>
+</footer>
 
 </body>
 </html>
