@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BetterStory — AI Systems That Replace Expensive Manual Work</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --ink: #1a1a1a;
+    --paper: #fafaf8;
+    --accent: #2a5a3a;
+    --accent-light: #e8f0eb;
+    --muted: #6b6b6b;
+    --border: #e2e0dc;
+    --card-bg: #ffffff;
+    --highlight: #f5f0e8;
+  }
+
+  body {
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.65;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 80px 0 60px;
+  }
+
+  .hero-label {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.15;
+    font-weight: 400;
+    margin-bottom: 24px;
+    max-width: 600px;
+  }
+
+  .hero-sub {
+    font-size: 19px;
+    color: var(--muted);
+    max-width: 540px;
+    line-height: 1.6;
+    margin-bottom: 36px;
+  }
+
+  .hero-cta-row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.2s;
+    letter-spacing: 0.01em;
+  }
+
+  .btn-primary:hover { background: #1e4a2d; }
+
+  .btn-secondary {
+    display: inline-block;
+    color: var(--muted);
+    font-size: 15px;
+    text-decoration: none;
+    padding: 14px 4px;
+    transition: color 0.2s;
+  }
+
+  .btn-secondary:hover { color: var(--ink); }
+
+  /* WEDGE SHOWCASE */
+  .showcase {
+    padding: 60px 0;
+  }
+
+  .showcase-label {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .showcase h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(24px, 4vw, 34px);
+    font-weight: 400;
+    margin-bottom: 32px;
+    line-height: 1.25;
+  }
+
+  .wedge-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 32px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .wedge-tab {
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: inherit;
+  }
+
+  .wedge-tab:hover { color: var(--ink); }
+
+  .wedge-tab.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  .wedge-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 36px;
+    display: none;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .wedge-card.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .wedge-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+
+  .wedge-card .wedge-tagline {
+    font-size: 15px;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .wedge-card p {
+    margin-bottom: 16px;
+    color: var(--ink);
+  }
+
+  .wedge-card p:last-child { margin-bottom: 0; }
+
+  .wedge-stat {
+    background: var(--highlight);
+    padding: 16px 20px;
+    border-radius: 6px;
+    margin: 20px 0;
+    font-size: 15px;
+  }
+
+  .wedge-stat strong {
+    color: var(--accent);
+  }
+
+  .wedge-retainer {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 15px;
+    color: var(--muted);
+  }
+
+  .wedge-retainer strong { color: var(--ink); }
+
+  /* PROOF */
+  .proof {
+    padding: 60px 0;
+  }
+
+  .proof-label {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .proof h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(24px, 4vw, 34px);
+    font-weight: 400;
+    margin-bottom: 36px;
+    line-height: 1.25;
+  }
+
+  .proof-grid {
+    display: grid;
+    gap: 24px;
+  }
+
+  .proof-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 32px;
+  }
+
+  .proof-card .proof-company {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .proof-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.35;
+  }
+
+  .proof-card p {
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 12px;
+    line-height: 1.6;
+  }
+
+  .proof-card p:last-child { margin-bottom: 0; }
+
+  .proof-result {
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  /* ABOUT */
+  .about {
+    padding: 60px 0;
+  }
+
+  .about-inner {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+  }
+
+  .about-text h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 16px;
+    line-height: 1.25;
+  }
+
+  .about-text p {
+    color: var(--muted);
+    margin-bottom: 14px;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  /* BOTTOM CTA */
+  .bottom-cta {
+    padding: 80px 0 100px;
+    text-align: left;
+  }
+
+  .bottom-cta h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(26px, 4vw, 36px);
+    font-weight: 400;
+    margin-bottom: 16px;
+    line-height: 1.25;
+  }
+
+  .bottom-cta p {
+    color: var(--muted);
+    font-size: 17px;
+    margin-bottom: 32px;
+    max-width: 500px;
+  }
+
+  .bottom-cta .hero-cta-row {
+    justify-content: flex-start;
+  }
+
+  /* HOW IT WORKS */
+  .how {
+    padding: 60px 0;
+  }
+
+  .how-label {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .how h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(24px, 4vw, 34px);
+    font-weight: 400;
+    margin-bottom: 36px;
+    line-height: 1.25;
+  }
+
+  .how-steps {
+    display: grid;
+    gap: 0;
+    position: relative;
+  }
+
+  .how-step {
+    display: flex;
+    gap: 24px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .how-step:last-child { border-bottom: none; }
+
+  .step-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    color: var(--accent);
+    opacity: 0.4;
+    line-height: 1;
+    min-width: 36px;
+    padding-top: 2px;
+  }
+
+  .step-content h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .step-content p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    .hero { padding: 60px 0 40px; }
+    .wedge-card { padding: 24px; }
+    .proof-card { padding: 24px; }
+    .wedge-tab { padding: 10px 14px; font-size: 13px; }
+    .about-inner { flex-direction: column; gap: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-label">BetterStory</div>
+    <h1>I build AI systems that replace expensive manual work</h1>
+    <p class="hero-sub">Fixed price. Delivered in weeks, not months. Every system I build is designed to keep compounding after launch — so you never go back to the old way.</p>
+    <div class="hero-cta-row">
+      <a href="#book" class="btn-primary" onclick="document.querySelector('.bottom-cta').scrollIntoView({behavior:'smooth'});return false;">Book a discovery call</a>
+      <a href="mailto:kmo@betterstory.co" class="btn-secondary">or email me directly →</a>
+    </div>
+  </section>
+
+  <!-- WEDGE SHOWCASE -->
+  <section class="showcase">
+    <div class="showcase-label">What I build</div>
+    <h2>Four systems. Each one saves you thousands per month.</h2>
+
+    <div class="wedge-tabs" role="tablist">
+      <button class="wedge-tab active" role="tab" data-wedge="proposals" aria-selected="true">Proposal Machine</button>
+      <button class="wedge-tab" role="tab" data-wedge="revenue" aria-selected="false">Revenue Leak Finder</button>
+      <button class="wedge-tab" role="tab" data-wedge="ops" aria-selected="false">Ops Audit</button>
+      <button class="wedge-tab" role="tab" data-wedge="meetings" aria-selected="false">Meeting Intelligence</button>
+    </div>
+
+    <!-- PROPOSAL MACHINE -->
+    <div class="wedge-card active" id="proposals">
+      <h3>The Proposal Machine</h3>
+      <div class="wedge-tagline">From messy brief to polished proposal in 3 minutes</div>
+      <p>Your team writes proposals by hand. Every single one. An RFP lands, someone disappears for a day, and out comes a doc that may or may not match what the client actually asked for.</p>
+      <p>I build a system that takes a brief, RFP, or client email and generates a structured proposal draft — scope, timeline, pricing framework, risk flags — before your second coffee.</p>
+      <div class="wedge-stat">
+        <strong>The math:</strong> If a senior person bills at $200/hour and every proposal takes 6 hours, each one costs you $1,200 in unbilled time. Most services firms write 8-12 per month. That is $10,000-$14,000 in invisible cost.
+      </div>
+      <p>This is not a template. It learns your voice, your pricing model, your win patterns. It gets sharper every time you use it.</p>
+      <div class="wedge-retainer">
+        <strong>After launch:</strong> I tune the system to your voice, feed it your win/loss data, and optimize output based on what actually closes deals. That is the ongoing layer — $5,000/month to keep it compounding.
+      </div>
+    </div>
+
+    <!-- REVENUE LEAK FINDER -->
+    <div class="wedge-card" id="revenue">
+      <h3>The Revenue Leak Finder</h3>
+      <div class="wedge-tagline">See exactly where deals go to die in your pipeline</div>
+      <p>Your CRM has data. Lots of it. But nobody is reading the story it tells. Deals stall at the same stage. Follow-ups slip through cracks. Reps repeat the same mistakes quarter after quarter.</p>
+      <p>I take your pipeline data and build a system that identifies exactly where revenue is leaking — which stages have the longest dwell time, which behaviors correlate with closed-lost, where your team drops the ball on follow-up.</p>
+      <div class="wedge-stat">
+        <strong>The output:</strong> A plain-English report showing your three biggest revenue leaks and what to do about each one. Not a dashboard you will ignore. A diagnosis with a prescription.
+      </div>
+      <p>The number this produces — "$X leaking per quarter" — becomes the business case for everything that follows.</p>
+      <div class="wedge-retainer">
+        <strong>After launch:</strong> I build the monitoring layer that catches leaks in real time and alerts your team before deals go cold. The system pays for itself in recovered revenue. $5,000-$7,500/month.
+      </div>
+    </div>
+
+    <!-- OPS AUDIT -->
+    <div class="wedge-card" id="ops">
+      <h3>The Ops Audit</h3>
+      <div class="wedge-tagline">Find every process that is quietly costing you 5+ hours a week</div>
+      <p>You know your team is doing things manually that should be automated. You just do not know which ones cost the most or where to start.</p>
+      <p>I spend 48 hours inside your workflows — Slack, project management, email patterns, internal tools — and deliver a ranked report of every manual process bleeding more than 5 hours per week. Each one comes with a cost estimate and a build plan.</p>
+      <div class="wedge-stat">
+        <strong>What you get:</strong> A prioritized list of automation opportunities ranked by cost impact. Pick any one and I will build it in 2-4 weeks for a fixed price.
+      </div>
+      <p>The audit always surfaces more problems than a single build can solve. That is the point. You get a roadmap, not a one-off fix.</p>
+      <div class="wedge-retainer">
+        <strong>After launch:</strong> We work through the list together. One build per month, continuous optimization, new opportunities as they surface. $5,000-$7,500/month.
+      </div>
+    </div>
+
+    <!-- MEETING INTELLIGENCE -->
+    <div class="wedge-card" id="meetings">
+      <h3>Meeting Intelligence</h3>
+      <div class="wedge-tagline">Every decision, commitment, and task — captured and assigned in 90 seconds</div>
+      <p>Your meetings generate ideas, decisions, and commitments. Most of them disappear. Someone says "let's circle back on that," and nobody writes it down. Two weeks later, the same conversation happens again.</p>
+      <p>I build the system that takes any meeting transcript and turns it into structured task lists — owners, deadlines, priorities, dependencies — before the meeting room is empty.</p>
+      <div class="wedge-stat">
+        <strong>The pain:</strong> Teams with 5 or more people in regular meetings lose 5-10 hours per week to action items that die in someone's notebook. That is one full employee's worth of lost output every month.
+      </div>
+      <p>This is not another transcription tool. It understands context, assigns ownership based on who said what, and flags when commitments conflict with existing deadlines.</p>
+      <div class="wedge-retainer">
+        <strong>After launch:</strong> The meeting system becomes the entry point for a full operating layer — tracking contacts, commitments, calendar, and email in one AI-powered system. No new UI to learn. No SaaS subscription to manage. $5,000/month.
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how">
+    <div class="how-label">How it works</div>
+    <h2>Simple process. Fast results.</h2>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Discovery call</h3>
+          <p>You tell me what is broken. I ask questions until I understand what it costs you. Takes 30 minutes.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>One-page proposal</h3>
+          <p>Within 24 hours, you get a clear scope, timeline, and fixed price. No surprises. 50% up front, 50% on delivery.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Build in 2-4 weeks</h3>
+          <p>I build your system and ship progress updates every few days. You see it working before you pay the second half.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h3>Keep compounding</h3>
+          <p>After launch, I optimize and expand the system monthly. New use cases emerge. The system gets smarter. You never go back.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF -->
+  <section class="proof">
+    <div class="proof-label">Proof</div>
+    <h2>Systems I have built recently</h2>
+    <div class="proof-grid">
+
+      <div class="proof-card">
+        <div class="proof-company">Health Tech Company</div>
+        <h3>AI training and implementation for a 200-person product team</h3>
+        <p>The team was curious about AI but had no structured way to learn or adopt it. I designed and delivered a hands-on training program — weekly sessions, real workflows, production use cases — that turned curiosity into capability.</p>
+        <p class="proof-result">Result: AI adoption went from scattered experiments to embedded practice across the product org. Built internal tools that replaced manual processes their team had lived with for years.</p>
+      </div>
+
+      <div class="proof-card">
+        <div class="proof-company">Plant Services Business</div>
+        <h3>Financial analysis and ops automation for a growing services company</h3>
+        <p>The owner was running financials in spreadsheets and making decisions on gut feel. I built an AI-powered system that pulls data from their existing tools, runs analysis automatically, and surfaces the numbers that actually matter.</p>
+        <p class="proof-result">Result: Replaced 8+ hours per week of manual financial reporting. The owner now sees margin by service line, flags cash flow risks early, and makes faster decisions with better data.</p>
+      </div>
+
+      <div class="proof-card">
+        <div class="proof-company">Internal Build</div>
+        <h3>A chat-based CRM that replaced four SaaS subscriptions</h3>
+        <p>I built a personal operating system that tracks contacts, commitments, calendar, and email — all through a conversational interface. No UI to learn. No dashboard to check. Just ask it a question and get the answer.</p>
+        <p class="proof-result">Result: Replaced Notion, a CRM, a task manager, and a contact database with a single AI-powered system. Runs locally. No monthly fees. Updates itself as I work.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <h2>25 years of building things for clients. Now with a force multiplier.</h2>
+        <p>I spent two decades in agencies — creative director, strategist, builder of things that make businesses work better. I have written the briefs, managed the budgets, and presented to the C-suite.</p>
+        <p>Now I pair that experience with AI systems that would have taken a team of five and six months to build two years ago. I deliver them in weeks. Alone. For a fixed price.</p>
+        <p>That is not a pitch. It is just what happens when deep business experience meets the best tools available.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="bottom-cta" id="book">
+    <h2>Let's find the process that is costing you the most</h2>
+    <p>30-minute call. No pitch deck. I will ask what is broken, you will tell me, and we will figure out if I can fix it. Simple.</p>
+    <div class="hero-cta-row">
+      <a href="https://calendly.com/kmo-betterstory/discovery" class="btn-primary">Book a discovery call</a>
+      <a href="mailto:kmo@betterstory.co" class="btn-secondary">or email kmo@betterstory.co →</a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  // Wedge tab switching
+  const tabs = document.querySelectorAll('.wedge-tab');
+  const cards = document.querySelectorAll('.wedge-card');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.wedge;
+
+      tabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      cards.forEach(c => c.classList.remove('active'));
+      document.getElementById(target).classList.add('active');
+    });
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
