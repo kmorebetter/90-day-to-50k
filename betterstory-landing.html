@@ -19,6 +19,9 @@
     --card-bg: #ffffff;
     --highlight: #f5f0e8;
     --warm: #f9f6f0;
+    --red-soft: #fdf2f2;
+    --red-border: #d97b7b;
+    --green-soft: #f0f7f2;
   }
 
   html { scroll-behavior: smooth; }
@@ -69,15 +72,10 @@
     transition: background 0.2s, color 0.2s;
   }
 
-  .nav-cta:hover {
-    background: var(--accent);
-    color: #fff;
-  }
+  .nav-cta:hover { background: var(--accent); color: #fff; }
 
   /* ── HERO ── */
-  .hero {
-    padding: 80px 0 64px;
-  }
+  .hero { padding: 80px 0 64px; }
 
   .hero-eyebrow {
     font-size: 13px;
@@ -97,10 +95,7 @@
     max-width: 620px;
   }
 
-  .hero h1 em {
-    font-style: italic;
-    color: var(--accent);
-  }
+  .hero h1 em { font-style: italic; color: var(--accent); }
 
   .hero-body {
     font-size: 19px;
@@ -110,10 +105,7 @@
     margin-bottom: 16px;
   }
 
-  .hero-body strong {
-    color: var(--ink);
-    font-weight: 500;
-  }
+  .hero-body strong { color: var(--ink); font-weight: 500; }
 
   .hero-note {
     font-size: 14px;
@@ -169,10 +161,6 @@
     gap: 32px;
   }
 
-  .tension-item {
-    text-align: left;
-  }
-
   .tension-num {
     font-family: 'DM Serif Display', serif;
     font-size: 36px;
@@ -222,162 +210,7 @@
     margin-bottom: 48px;
   }
 
-  /* ── WEDGE ── */
-  .wedge-block {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 48px;
-  }
-
-  .wedge-header {
-    padding: 36px 36px 28px;
-    border-bottom: 1px solid var(--border);
-    background: var(--warm);
-  }
-
-  .wedge-tag {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent);
-    background: var(--accent-light);
-    padding: 4px 10px;
-    border-radius: 3px;
-    margin-bottom: 16px;
-  }
-
-  .wedge-header h3 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(22px, 3.5vw, 28px);
-    font-weight: 400;
-    line-height: 1.2;
-    margin-bottom: 12px;
-  }
-
-  .wedge-header p {
-    font-size: 16px;
-    color: var(--muted);
-    max-width: 520px;
-    line-height: 1.6;
-  }
-
-  .wedge-body {
-    padding: 36px;
-  }
-
-  .wedge-pain {
-    font-size: 16px;
-    color: var(--ink);
-    line-height: 1.65;
-    margin-bottom: 24px;
-  }
-
-  .wedge-stat-box {
-    background: var(--highlight);
-    border-left: 3px solid var(--accent);
-    padding: 18px 22px;
-    border-radius: 0 6px 6px 0;
-    margin: 24px 0;
-    font-size: 15px;
-    line-height: 1.6;
-  }
-
-  .wedge-stat-box strong {
-    color: var(--accent);
-  }
-
-  .wedge-what-you-get {
-    margin: 28px 0;
-  }
-
-  .wedge-what-you-get h4 {
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 14px;
-  }
-
-  .wedge-what-you-get ul {
-    list-style: none;
-    display: grid;
-    gap: 10px;
-  }
-
-  .wedge-what-you-get li {
-    font-size: 15px;
-    color: var(--ink);
-    padding-left: 22px;
-    position: relative;
-    line-height: 1.5;
-  }
-
-  .wedge-what-you-get li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-size: 13px;
-    top: 1px;
-  }
-
-  .wedge-price-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 28px;
-    border-top: 1px solid var(--border);
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-
-  .wedge-price {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .price-label {
-    font-size: 12px;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-weight: 500;
-    margin-bottom: 4px;
-  }
-
-  .price-number {
-    font-family: 'DM Serif Display', serif;
-    font-size: 32px;
-    color: var(--ink);
-    line-height: 1;
-  }
-
-  .price-detail {
-    font-size: 13px;
-    color: var(--muted);
-    margin-top: 4px;
-  }
-
-  .wedge-retainer-note {
-    background: var(--accent-light);
-    border-radius: 6px;
-    padding: 14px 18px;
-    font-size: 14px;
-    color: var(--accent);
-    line-height: 1.5;
-    max-width: 340px;
-  }
-
-  .wedge-retainer-note strong {
-    font-weight: 600;
-  }
-
-  /* ── OTHER BUILDS ── */
+  /* ── BUILDS GRID ── */
   .builds-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -392,14 +225,9 @@
     transition: border-color 0.2s;
   }
 
-  .build-card:hover {
-    border-color: var(--accent);
-  }
+  .build-card:hover { border-color: var(--accent); }
 
-  .build-icon {
-    font-size: 22px;
-    margin-bottom: 14px;
-  }
+  .build-icon { font-size: 22px; margin-bottom: 14px; }
 
   .build-card h3 {
     font-size: 16px;
@@ -414,95 +242,311 @@
     line-height: 1.55;
   }
 
-  /* ── PROOF ── */
-  .proof-grid {
+  .wedge-stat-box {
+    background: var(--highlight);
+    border-left: 3px solid var(--accent);
+    padding: 18px 22px;
+    border-radius: 0 6px 6px 0;
+    margin: 24px 0;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .wedge-stat-box strong { color: var(--accent); }
+
+  /* ── WHY NOW ── */
+  .why-now {
+    background: var(--ink);
+    color: #fff;
+    padding: 80px 0;
+  }
+
+  .why-now .section-eyebrow { color: #7ab891; }
+
+  .why-now .section-title { color: #fff; }
+
+  .why-now .section-title em { font-style: italic; color: #7ab891; }
+
+  .why-now-body {
+    font-size: 17px;
+    color: #b0b0a8;
+    line-height: 1.75;
+    max-width: 600px;
+    margin-bottom: 56px;
+  }
+
+  .why-now-body strong { color: #fff; font-weight: 500; }
+
+  .old-new-grid {
     display: grid;
-    gap: 28px;
-  }
-
-  .proof-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
     border-radius: 10px;
-    padding: 36px;
+    overflow: hidden;
+    margin-bottom: 48px;
   }
 
-  .proof-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
+  .old-col, .new-col {
+    padding: 32px;
+  }
+
+  .old-col {
+    background: #2a2a26;
+  }
+
+  .new-col {
+    background: #1e3d28;
+  }
+
+  .col-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
     margin-bottom: 20px;
   }
 
-  .proof-badge {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--accent);
-    background: var(--accent-light);
-    padding: 4px 10px;
-    border-radius: 3px;
-    white-space: nowrap;
-    margin-top: 2px;
+  .old-col .col-label { color: #888; }
+  .new-col .col-label { color: #7ab891; }
+
+  .col-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 14px;
   }
 
-  .proof-card h3 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 1.3;
+  .col-item:last-child { margin-bottom: 0; }
+
+  .col-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    margin-top: 8px;
+    flex-shrink: 0;
   }
 
-  .proof-before-after {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin: 20px 0;
-  }
+  .old-col .col-dot { background: #555; }
+  .new-col .col-dot { background: #7ab891; }
 
-  .proof-before, .proof-after {
-    padding: 16px 18px;
-    border-radius: 6px;
+  .col-item p {
     font-size: 14px;
     line-height: 1.55;
   }
 
-  .proof-before {
-    background: #fdf2f2;
-    border-left: 3px solid #d97b7b;
+  .old-col .col-item p { color: #888; }
+  .new-col .col-item p { color: #c8ddd2; }
+
+  .why-unlock {
+    background: #1a1a16;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 24px 28px;
+    font-size: 15px;
+    color: #b0b0a8;
+    line-height: 1.65;
   }
 
-  .proof-after {
-    background: #f0f7f2;
-    border-left: 3px solid var(--accent);
+  .why-unlock strong { color: #fff; }
+
+  /* ── SPEED BARS ── */
+  .speed-section { padding: 80px 0; }
+
+  .speed-grid {
+    display: grid;
+    gap: 28px;
+    margin-top: 40px;
   }
 
-  .ba-label {
+  .speed-row {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px 28px;
+  }
+
+  .speed-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+
+  .speed-bars {
+    display: grid;
+    gap: 10px;
+  }
+
+  .speed-bar-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 60px;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .speed-bar-tag {
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    margin-bottom: 8px;
+    text-align: right;
   }
 
-  .proof-before .ba-label { color: #a05050; }
-  .proof-after .ba-label { color: var(--accent); }
+  .speed-bar-tag.before { color: #a05050; }
+  .speed-bar-tag.after { color: var(--accent); }
 
-  .proof-card .proof-note {
+  .speed-bar-track {
+    background: #f0eeea;
+    border-radius: 4px;
+    height: 10px;
+    overflow: hidden;
+  }
+
+  .speed-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    width: 0;
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .speed-bar-fill.before { background: #d97b7b; }
+  .speed-bar-fill.after { background: var(--accent); }
+
+  .speed-bar-val {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* ── CASE STUDIES ── */
+  .case-studies { padding: 72px 0; }
+
+  .case-grid { display: grid; gap: 40px; }
+
+  .case-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .case-header {
+    padding: 28px 32px 24px;
+    background: var(--warm);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .case-meta {}
+
+  .case-industry {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  .case-header h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.25;
+    max-width: 440px;
+  }
+
+  .case-stat {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .case-stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 42px;
+    line-height: 1;
+    color: var(--accent);
+  }
+
+  .case-stat-label {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+    white-space: nowrap;
+  }
+
+  .case-body {
+    padding: 28px 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .case-block { }
+
+  .case-block-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .case-block-label.problem { color: #a05050; }
+  .case-block-label.solution { color: var(--accent); }
+
+  .case-block-label::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .case-block-label.problem::before { background: #d97b7b; }
+  .case-block-label.solution::before { background: var(--accent); }
+
+  .case-block p {
     font-size: 14px;
     color: var(--muted);
     line-height: 1.6;
-    font-style: italic;
-    margin-top: 4px;
   }
 
-  /* ── HOW IT WORKS ── */
-  .how-steps {
-    display: grid;
-    gap: 0;
-    counter-reset: steps;
+  .case-result {
+    margin: 0 32px 28px;
+    background: var(--accent-light);
+    border-radius: 8px;
+    padding: 18px 22px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
   }
+
+  .case-result-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .case-result-text {
+    font-size: 14px;
+    color: var(--accent);
+    line-height: 1.6;
+  }
+
+  .case-result-text strong { font-weight: 600; }
+
+  /* ── HOW IT WORKS ── */
+  .how-steps { display: grid; gap: 0; }
 
   .how-step {
     display: grid;
@@ -567,22 +611,11 @@
   }
 
   .about-left p:last-child { margin-bottom: 0; }
+  .about-left strong { color: var(--ink); font-weight: 500; }
 
-  .about-left strong {
-    color: var(--ink);
-    font-weight: 500;
-  }
+  .about-credentials { display: grid; gap: 14px; }
 
-  .about-credentials {
-    display: grid;
-    gap: 14px;
-  }
-
-  .credential {
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-  }
+  .credential { display: flex; gap: 14px; align-items: flex-start; }
 
   .credential-dot {
     width: 6px;
@@ -593,11 +626,7 @@
     flex-shrink: 0;
   }
 
-  .credential-text {
-    font-size: 15px;
-    color: var(--ink);
-    line-height: 1.5;
-  }
+  .credential-text { font-size: 15px; color: var(--ink); line-height: 1.5; }
 
   .credential-text span {
     color: var(--muted);
@@ -605,6 +634,76 @@
     display: block;
     margin-top: 2px;
   }
+
+  /* ── FAQ ── */
+  .faq-section { padding: 72px 0; }
+
+  .faq-list { display: grid; gap: 0; margin-top: 40px; }
+
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .faq-item:first-child { border-top: 1px solid var(--border); }
+
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 22px 0;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    transition: color 0.2s;
+  }
+
+  .faq-question:hover { color: var(--accent); }
+
+  .faq-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .faq-icon::before,
+  .faq-icon::after {
+    content: '';
+    position: absolute;
+    background: currentColor;
+    border-radius: 2px;
+    transition: transform 0.25s, opacity 0.25s;
+  }
+
+  .faq-icon::before { width: 12px; height: 2px; top: 9px; left: 4px; }
+  .faq-icon::after { width: 2px; height: 12px; top: 4px; left: 9px; }
+
+  .faq-item.open .faq-icon::after { transform: rotate(90deg); opacity: 0; }
+  .faq-item.open .faq-question { color: var(--accent); }
+
+  .faq-answer {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.35s ease;
+  }
+
+  .faq-answer-inner {
+    padding: 0 0 22px;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 580px;
+  }
+
+  .faq-answer-inner p { margin-bottom: 10px; }
+  .faq-answer-inner p:last-child { margin-bottom: 0; }
 
   /* ── BOTTOM CTA ── */
   .bottom-cta {
@@ -640,9 +739,7 @@
     font-style: italic;
   }
 
-  .bottom-cta .cta-group {
-    justify-content: center;
-  }
+  .bottom-cta .cta-group { justify-content: center; }
 
   /* ── FOOTER ── */
   footer {
@@ -658,10 +755,7 @@
     gap: 12px;
   }
 
-  footer p {
-    font-size: 13px;
-    color: var(--muted);
-  }
+  footer p { font-size: 13px; color: var(--muted); }
 
   footer a {
     font-size: 13px;
@@ -672,12 +766,7 @@
 
   footer a:hover { color: var(--ink); }
 
-  /* ── DIVIDER ── */
-  .divider {
-    border: none;
-    border-top: 1px solid var(--border);
-    margin: 0;
-  }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 640px) {
@@ -685,14 +774,16 @@
     .tension .container { grid-template-columns: 1fr; gap: 24px; }
     .tension { padding: 40px 0; margin-bottom: 56px; }
     .builds-grid { grid-template-columns: 1fr; }
-    .proof-before-after { grid-template-columns: 1fr; }
+    .old-new-grid { grid-template-columns: 1fr; gap: 2px; }
     .about-inner { grid-template-columns: 1fr; gap: 36px; }
-    .wedge-header, .wedge-body { padding: 24px; }
-    .wedge-price-row { flex-direction: column; align-items: flex-start; }
-    .wedge-retainer-note { max-width: 100%; }
     .proof-card { padding: 24px; }
-    .proof-header { flex-direction: column; gap: 10px; }
     section { padding: 56px 0; }
+    .case-header { flex-direction: column; }
+    .case-stat { text-align: left; }
+    .case-body { grid-template-columns: 1fr; }
+    .case-result { margin: 0 24px 24px; }
+    .speed-bar-row { grid-template-columns: 60px 1fr 50px; }
+    .why-now { padding: 60px 0; }
   }
 </style>
 </head>
@@ -717,7 +808,7 @@
     <p class="hero-note">Starting at $4,500 — no procurement cycle, no six-month engagement</p>
     <div class="cta-group">
       <a href="https://calendly.com/kmo-betterstory/discovery" class="btn-primary">Book a 30-minute call</a>
-      <a href="mailto:kmo@betterstory.co" class="btn-ghost">or email me directly →</a>
+      <a href="mailto:kmo@betterstory.co" class="btn-ghost">or email us directly →</a>
     </div>
   </section>
 </div>
@@ -729,14 +820,14 @@
       <div class="tension-num">10×</div>
       <div class="tension-label">
         <strong>Faster, at minimum</strong>
-        The work that takes your team a week. My systems do it before lunch.
+        The work that takes your team a week. Our systems do it before lunch.
       </div>
     </div>
     <div class="tension-item">
-      <div class="tension-num">2–4</div>
+      <div class="tension-num">Days</div>
       <div class="tension-label">
-        <strong>Weeks to delivery</strong>
-        Not six months. Not a pilot programme. A production system, running, in your hands.
+        <strong>Not months</strong>
+        Not a pilot programme. A production system, running, in your hands.
       </div>
     </div>
     <div class="tension-item">
@@ -754,7 +845,7 @@
   <section>
     <div class="section-eyebrow">What this looks like in practice</div>
     <h2 class="section-title">Every business has work that shouldn't be done by humans anymore. Here are the patterns we fix most often.</h2>
-    <p class="section-intro">We don't sell a specific product. We find the repetitive, low-leverage work that's stealing time from your team and build the system that makes it disappear. These are the patterns we see again and again.</p>
+    <p class="section-intro">We don't sell a specific product. We find the repetitive, low-leverage work that's stealing time from your team and build the system that makes it disappear.</p>
 
     <div class="builds-grid">
       <div class="build-card">
@@ -783,69 +874,213 @@
       <strong>The honest answer:</strong> We don't know which of your processes is the right one to go after first. That's what the 30-minute call is for. You tell us where your team's time is going. We tell you which parts we can make disappear — and how fast. No pitch deck. No capabilities document. Just a direct conversation.
     </div>
   </section>
+</div>
+
+<!-- WHY THIS IS POSSIBLE NOW -->
+<section class="why-now">
+  <div class="container">
+    <div class="section-eyebrow">What we've unlocked</div>
+    <h2 class="section-title" style="margin-bottom:24px;">Most businesses are using AI to work a little faster.<br><em>That's the wrong use of it.</em></h2>
+    <p class="why-now-body">
+      For twenty years, automating a complex business process required a development team, months of work, and a six-figure budget. That's why only enterprises could afford it. <strong>Everyone else hired another person.</strong>
+    </p>
+    <p class="why-now-body" style="margin-bottom: 40px;">
+      That's changed. AI can now understand your business context, connect your existing tools, handle complex decision-making, and build and deploy its own systems — without a team, without months, without enterprise budgets. The opportunity isn't making humans faster at their work. <strong>It's replacing entire categories of work that humans shouldn't be doing at all.</strong>
+    </p>
+
+    <div class="old-new-grid">
+      <div class="old-col">
+        <div class="col-label">The old way</div>
+        <div class="col-item"><div class="col-dot"></div><p>Automation required a dev team and months of planning</p></div>
+        <div class="col-item"><div class="col-dot"></div><p>Custom software meant six-figure budgets and long contracts</p></div>
+        <div class="col-item"><div class="col-dot"></div><p>Repetitive work was solved by hiring another person</p></div>
+        <div class="col-item"><div class="col-dot"></div><p>AI tools helped individuals work slightly faster</p></div>
+        <div class="col-item"><div class="col-dot"></div><p>Process improvement took quarters, not weeks</p></div>
+      </div>
+      <div class="new-col">
+        <div class="col-label">What's possible now</div>
+        <div class="col-item"><div class="col-dot"></div><p>Production systems built and shipped in days</p></div>
+        <div class="col-item"><div class="col-dot"></div><p>Fixed price, no procurement, no long-term dependency</p></div>
+        <div class="col-item"><div class="col-dot"></div><p>Entire job functions replaced, not just assisted</p></div>
+        <div class="col-item"><div class="col-dot"></div><p>AI systems that handle the work end-to-end, not just the drafting</p></div>
+        <div class="col-item"><div class="col-dot"></div><p>ROI visible within the first month</p></div>
+      </div>
+    </div>
+
+    <div class="why-unlock">
+      Most of our clients are already using AI — for writing emails, summarizing documents, helping with research. That's useful. It's also leaving the biggest opportunity untouched. <strong>The real leverage is removing entire workflows from your team's plate entirely.</strong> That's what we build.
+    </div>
+  </div>
+</section>
+
+<!-- THE SPEED GAP -->
+<div class="container">
+  <section class="speed-section">
+    <div class="section-eyebrow">The speed gap</div>
+    <h2 class="section-title">What your team does in hours. What our systems do in seconds.</h2>
+    <p class="section-intro">These aren't projections. They're the before and after from systems we've already built.</p>
+
+    <div class="speed-grid">
+
+      <div class="speed-row">
+        <div class="speed-label">Writing a proposal from a brief</div>
+        <div class="speed-bars">
+          <div class="speed-bar-row">
+            <div class="speed-bar-tag before">Before</div>
+            <div class="speed-bar-track"><div class="speed-bar-fill before" data-width="92"></div></div>
+            <div class="speed-bar-val">6 hours</div>
+          </div>
+          <div class="speed-bar-row">
+            <div class="speed-bar-tag after">After</div>
+            <div class="speed-bar-track"><div class="speed-bar-fill after" data-width="4"></div></div>
+            <div class="speed-bar-val">4 minutes</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="speed-row">
+        <div class="speed-label">Weekly financial reporting</div>
+        <div class="speed-bars">
+          <div class="speed-bar-row">
+            <div class="speed-bar-tag before">Before</div>
+            <div class="speed-bar-track"><div class="speed-bar-fill before" data-width="85"></div></div>
+            <div class="speed-bar-val">3–4 hours</div>
+          </div>
+          <div class="speed-bar-row">
+            <div class="speed-bar-tag after">After</div>
+            <div class="speed-bar-track"><div class="speed-bar-fill after" data-width="2"></div></div>
+            <div class="speed-bar-val">Automatic</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="speed-row">
+        <div class="speed-label">Meeting action items captured and assigned</div>
+        <div class="speed-bars">
+          <div class="speed-bar-row">
+            <div class="speed-bar-tag before">Before</div>
+            <div class="speed-bar-track"><div class="speed-bar-fill before" data-width="70"></div></div>
+            <div class="speed-bar-val">Unreliable</div>
+          </div>
+          <div class="speed-bar-row">
+            <div class="speed-bar-tag after">After</div>
+            <div class="speed-bar-track"><div class="speed-bar-fill after" data-width="3"></div></div>
+            <div class="speed-bar-val">90 seconds</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="speed-row">
+        <div class="speed-label">Analysing pipeline data for revenue leaks</div>
+        <div class="speed-bars">
+          <div class="speed-bar-row">
+            <div class="speed-bar-tag before">Before</div>
+            <div class="speed-bar-track"><div class="speed-bar-fill before" data-width="95"></div></div>
+            <div class="speed-bar-val">Quarterly</div>
+          </div>
+          <div class="speed-bar-row">
+            <div class="speed-bar-tag after">After</div>
+            <div class="speed-bar-track"><div class="speed-bar-fill after" data-width="2"></div></div>
+            <div class="speed-bar-val">Real-time</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <hr class="divider">
 
-  <!-- PROOF -->
-  <section>
-    <div class="section-eyebrow">Proof</div>
-    <h2 class="section-title">Systems we've built recently</h2>
-    <p class="section-intro">Three real builds. Real problems. What it looked like before, what it looks like now.</p>
+  <!-- CASE STUDIES -->
+  <section class="case-studies">
+    <div class="section-eyebrow">Case studies</div>
+    <h2 class="section-title">Real problems. Real results.</h2>
+    <p class="section-intro">Three builds. Each one started with a specific, painful process that was costing the business more than it knew.</p>
 
-    <div class="proof-grid">
+    <div class="case-grid">
 
-      <div class="proof-card">
-        <div class="proof-header">
-          <div class="proof-badge">Health Tech</div>
-          <h3>AI adoption for a 200-person product team that had no idea where to start</h3>
-        </div>
-        <div class="proof-before-after">
-          <div class="proof-before">
-            <div class="ba-label">Before</div>
-            Scattered AI experiments. No shared practice. Senior people spending hours on tasks that should take minutes. Curiosity without direction.
+      <!-- CASE 1 -->
+      <div class="case-card">
+        <div class="case-header">
+          <div class="case-meta">
+            <div class="case-industry">Health Tech · 200-person product org</div>
+            <h3>Turning scattered AI curiosity into embedded practice — across an entire product team</h3>
           </div>
-          <div class="proof-after">
-            <div class="ba-label">After</div>
-            Weekly hands-on sessions. Real workflows replaced with AI-assisted ones. Internal tools built and shipped. AI went from side project to embedded practice across the org.
+          <div class="case-stat">
+            <div class="case-stat-num">8+</div>
+            <div class="case-stat-label">hours/week returned<br>per team member</div>
           </div>
         </div>
-        <p class="proof-note">Built the training program, delivered the sessions, and built the internal tools. Ongoing engagement — this is what a retainer looks like in practice.</p>
+        <div class="case-body">
+          <div class="case-block">
+            <div class="case-block-label problem">The problem</div>
+            <p>Senior people spending hours on work that should take minutes. AI experiments happening in isolation with no shared practice, no repeatable process, no way to scale what was working. Curiosity without traction.</p>
+          </div>
+          <div class="case-block">
+            <div class="case-block-label solution">What we built</div>
+            <p>A structured AI adoption programme — weekly hands-on sessions, real workflows replaced with AI-assisted ones, internal tools built and shipped. Not a training course. An operating change.</p>
+          </div>
+        </div>
+        <div class="case-result">
+          <div class="case-result-icon">↗</div>
+          <div class="case-result-text"><strong>AI went from side project to embedded practice.</strong> Tools built during the programme are still running. The team now moves faster on work that used to create bottlenecks — and the practice compounds over time.</div>
+        </div>
       </div>
 
-      <div class="proof-card">
-        <div class="proof-header">
-          <div class="proof-badge">Plant Services</div>
-          <h3>Replaced 8 hours a week of manual financial reporting with a system that runs itself</h3>
-        </div>
-        <div class="proof-before-after">
-          <div class="proof-before">
-            <div class="ba-label">Before</div>
-            Owner running financials in spreadsheets. Decisions made on gut feel. No visibility into margin by service line. Cash flow surprises.
+      <!-- CASE 2 -->
+      <div class="case-card">
+        <div class="case-header">
+          <div class="case-meta">
+            <div class="case-industry">Plant Services · Owner-operated business</div>
+            <h3>Replacing 8 hours a week of manual financial reporting with a system that runs itself</h3>
           </div>
-          <div class="proof-after">
-            <div class="ba-label">After</div>
-            Automated analysis pulling from existing tools. Margin by service line, visible daily. Cash flow risks surfaced early. 8+ hours per week returned to the owner.
+          <div class="case-stat">
+            <div class="case-stat-num">8h</div>
+            <div class="case-stat-label">per week returned<br>to the owner</div>
           </div>
         </div>
-        <p class="proof-note">The system paid for itself in the first month. The owner now makes faster decisions with better data than they had access to before.</p>
+        <div class="case-body">
+          <div class="case-block">
+            <div class="case-block-label problem">The problem</div>
+            <p>Financials managed in spreadsheets. Decisions made on gut feel. No visibility into margin by service line. Cash flow surprises showing up too late to act on. The owner was doing CFO work in Excel every week.</p>
+          </div>
+          <div class="case-block">
+            <div class="case-block-label solution">What we built</div>
+            <p>An automated analysis system that pulls from existing tools, runs every morning, and surfaces the numbers that actually matter — margin by service line, cash flow risks, trends — without anyone touching a spreadsheet.</p>
+          </div>
+        </div>
+        <div class="case-result">
+          <div class="case-result-icon">↗</div>
+          <div class="case-result-text"><strong>The system paid for itself in the first month.</strong> The owner now has better financial visibility than before — daily instead of weekly — and spends zero time producing it.</div>
+        </div>
       </div>
 
-      <div class="proof-card">
-        <div class="proof-header">
-          <div class="proof-badge">Internal Build</div>
-          <h3>Replaced four SaaS subscriptions with one AI-powered system that knows everything</h3>
-        </div>
-        <div class="proof-before-after">
-          <div class="proof-before">
-            <div class="ba-label">Before</div>
-            Four separate tools: a CRM, a task manager, a contact database, and Notion. Data spread across all of them. Context lost constantly.
+      <!-- CASE 3 -->
+      <div class="case-card">
+        <div class="case-header">
+          <div class="case-meta">
+            <div class="case-industry">Professional Services · Internal build</div>
+            <h3>Replacing four disconnected SaaS tools with one AI system that knows everything</h3>
           </div>
-          <div class="proof-after">
-            <div class="ba-label">After</div>
-            One conversational interface. Ask it anything — contacts, commitments, calendar, email. No UI to check. No dashboard to maintain. It updates itself as you work.
+          <div class="case-stat">
+            <div class="case-stat-num">4</div>
+            <div class="case-stat-label">SaaS tools<br>eliminated</div>
           </div>
         </div>
-        <p class="proof-note">This is the system we use ourselves. It's also the retainer layer we offer after the meeting intelligence build — because once you have one, you want the other.</p>
+        <div class="case-body">
+          <div class="case-block">
+            <div class="case-block-label problem">The problem</div>
+            <p>Contacts in one tool. Tasks in another. Commitments buried in email threads. Context constantly lost when switching between systems. Time spent maintaining tools instead of doing work.</p>
+          </div>
+          <div class="case-block">
+            <div class="case-block-label solution">What we built</div>
+            <p>A single conversational interface that tracks contacts, commitments, calendar, and email. No UI to check. No dashboard to maintain. Ask it a question, get the answer. It updates itself as you work.</p>
+          </div>
+        </div>
+        <div class="case-result">
+          <div class="case-result-icon">↗</div>
+          <div class="case-result-text"><strong>Four tools replaced. Zero ongoing SaaS fees.</strong> Everything in one place, accessible in seconds. The system we use ourselves — and the foundation we build on for clients who want the full operating layer.</div>
+        </div>
       </div>
 
     </div>
@@ -883,8 +1118,8 @@
       <div class="how-step">
         <div class="step-num">4</div>
         <div class="step-content">
-          <h3>The question we ask at delivery</h3>
-          <p>"Want us to keep going?" The system you have is working. New use cases are already visible. We keep optimizing, expanding, and building on what we started — for $5,000/month. That question is worth $60,000 a year per client who says yes.</p>
+          <h3>What comes next</h3>
+          <p>Delivery isn't the end — it's usually where the interesting work begins. Once one process is gone, the next one becomes obvious. We can optimize what we built, tackle the next bottleneck, or expand the system into new parts of your business. Most clients find there's always a next challenge worth going after.</p>
         </div>
       </div>
     </div>
@@ -920,21 +1155,21 @@
           <div class="credential-dot"></div>
           <div class="credential-text">
             Fixed price, not hourly
-            <span>I absorb the risk of estimation. You know what you're paying before we start.</span>
+            <span>I absorb the risk of estimation. You know what you're paying before we start</span>
           </div>
         </div>
         <div class="credential">
           <div class="credential-dot"></div>
           <div class="credential-text">
-            You own everything I build
-            <span>Code, documentation, credentials. No lock-in. No dependency on me to keep the lights on.</span>
+            You own everything we build
+            <span>Code, documentation, credentials. No lock-in. No dependency on us to keep the lights on</span>
           </div>
         </div>
         <div class="credential">
           <div class="credential-dot"></div>
           <div class="credential-text">
             Toronto-based, works everywhere
-            <span>Remote-first. Clients in Canada and the US.</span>
+            <span>Remote-first. Clients in Canada and the US</span>
           </div>
         </div>
       </div>
@@ -942,11 +1177,105 @@
   </div>
 </section>
 
-<!-- BOTTOM CTA -->
+<!-- FAQ -->
 <div class="container">
+  <section class="faq-section">
+    <div class="section-eyebrow">FAQ</div>
+    <h2 class="section-title">Questions we hear most often</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question">
+          How do we know if our problem is a good fit?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>If your team is doing something repetitive, rule-based, or data-heavy on a regular basis — and it's costing you more than a few hours a week — it's almost certainly a good fit. The 30-minute call is specifically designed to figure this out. You describe what's painful. We tell you honestly whether it's something we can fix, how fast, and what it would cost. If it's not a good fit, we'll tell you that too.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          What does "fixed price" mean if things change?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Fixed price means we absorb the risk of estimation. If the build takes longer than we expected, that's on us — not you. The scope is defined clearly in the one-page proposal before we start. If you want to add something new mid-build, we'll scope it as a separate piece. No surprises on either side.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Do we need technical people on our end?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>No. We need someone who understands the problem and can access the relevant data or tools. That's usually the person who does the work today — not a developer. We handle everything technical and deliver something your team can use without understanding what's under the hood.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          How is this different from hiring a developer?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>A developer builds what you tell them to build. We figure out what should be built — and why — before we write a line of code. Twenty-five years of business experience means we understand the process problem first and the technical solution second. We also move significantly faster and deliver for a fixed price, not an hourly rate with an uncertain timeline.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          What if it doesn't work the way we expected?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>We don't take the second half of the payment until you've seen the system working. If something isn't right, we fix it before you pay. We also do a proper handoff — documentation, walkthrough, and a window of support after delivery. We're not interested in shipping something and disappearing.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          What tools and platforms do you work with?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>We work with whatever you already use. Slack, Notion, Asana, HubSpot, Salesforce, Google Workspace, Microsoft 365, Zoom, Teams — and we connect them to AI systems that understand your data and your context. We don't require you to adopt new tools. We make the tools you have work harder.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Do you work under NDA?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Yes. If you need an NDA before the discovery call or before we start the build, that's standard practice and we're happy to sign yours or provide our own.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
   <section class="bottom-cta" id="book">
-    <h2>Let's find the process that is costing you the most</h2>
-    <p>30-minute call. No pitch deck. You tell us where your team's time is going — we'll tell you which parts we can make disappear.</p>
+    <h2>Tell us where your team's time is going</h2>
+    <p>30-minute call. No pitch deck. We'll tell you which parts we can make disappear — and how fast.</p>
     <p class="price-hint">Starts at $4,500 fixed price. Most clients pay for it in the first month.</p>
     <div class="cta-group">
       <a href="https://calendly.com/kmo-betterstory/discovery" class="btn-primary">Book a discovery call</a>
@@ -962,6 +1291,43 @@
     <a href="mailto:kmo@betterstory.co">kmo@betterstory.co</a>
   </div>
 </footer>
+
+<script>
+  // ── FAQ accordion ──
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = item.classList.contains('open');
+
+      // close all
+      document.querySelectorAll('.faq-item.open').forEach(openItem => {
+        openItem.classList.remove('open');
+        openItem.querySelector('.faq-answer').style.maxHeight = null;
+      });
+
+      // open clicked if it was closed
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // ── Speed bar animation on scroll ──
+  const bars = document.querySelectorAll('.speed-bar-fill');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.width = entry.target.dataset.width + '%';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  bars.forEach(bar => observer.observe(bar));
+</script>
 
 </body>
 </html>
