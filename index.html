@@ -863,6 +863,237 @@
     .skills-form-box { padding: 28px 24px; }
   }
 
+  /* ── LETTER / ABOUT ── */
+  .letter-prose {
+    margin-top: 36px;
+    max-width: 640px;
+  }
+
+  .letter-heading {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(26px, 3.8vw, 38px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 32px;
+  }
+
+  .letter-prose p {
+    font-size: 17px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .letter-prose p strong { color: var(--ink); font-weight: 500; }
+  .letter-prose p em { font-style: italic; color: var(--accent); }
+
+  .letter-sig {
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  .letter-sig strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .letter-sig span {
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .cred-boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 48px;
+  }
+
+  .cred-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+  }
+
+  .cred-box-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .cred-box-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .cred-box-body {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  @media (max-width: 640px) {
+    .cred-boxes { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ── AI POSSIBLE ── */
+  .ai-possible {
+    background: var(--ink);
+    color: #fff;
+    padding: 80px 0;
+  }
+
+  .ai-possible-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .ai-possible-heading {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(24px, 3.5vw, 34px);
+    font-weight: 400;
+    line-height: 1.2;
+    color: #fff;
+  }
+
+  .ai-possible-right p {
+    font-size: 16px;
+    color: #b0b0a8;
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+
+  .ai-possible-right p:last-of-type { margin-bottom: 0; }
+
+  .ai-possible-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 36px;
+    padding-top: 32px;
+    border-top: 1px solid #333;
+  }
+
+  .ai-stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    color: #7ab891;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .ai-stat-label {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 640px) {
+    .ai-possible-inner { grid-template-columns: 1fr; gap: 36px; }
+    .ai-possible-stats { grid-template-columns: 1fr; gap: 20px; }
+    .ai-possible { padding: 60px 0; }
+  }
+
+  /* ── FOUNDING OFFER ── */
+  .founding-offer {
+    background: var(--highlight);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 80px 0;
+  }
+
+  .founding-inner {
+    max-width: 640px;
+  }
+
+  .founding-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-light);
+    border: 1px solid var(--accent);
+    border-radius: 20px;
+    padding: 5px 14px;
+    margin-bottom: 24px;
+  }
+
+  .founding-body {
+    font-size: 17px;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 580px;
+    margin-bottom: 16px;
+  }
+
+  .founding-body strong { color: var(--ink); font-weight: 500; }
+
+  .founding-criteria {
+    margin: 32px 0 36px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px;
+  }
+
+  .founding-criteria-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 18px;
+  }
+
+  .founding-criteria-grid {
+    display: grid;
+    gap: 14px;
+  }
+
+  .founding-criterion {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  .founding-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+
+  .founding-cta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .founding-slots {
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
   /* ── BOTTOM CTA ── */
   .bottom-cta {
     padding: 96px 0;
@@ -1284,50 +1515,67 @@
   </section>
 </div>
 
-<!-- ABOUT -->
-<section class="about">
+<!-- FOUNDING CLIENT OFFER -->
+<section class="founding-offer">
   <div class="container">
-    <div class="about-inner">
-      <div class="about-left">
-        <h2>25 years building things for clients. Now with a force multiplier.</h2>
-        <p>I spent two decades in agencies — <strong>creative director, strategist, the person who figures out what is actually broken and fixes it.</strong> I have written the briefs, managed the budgets, presented to the C-suite, and shipped things that had to work.</p>
-        <p>Now I pair that experience with AI systems that would have taken a team of five and six months to build two years ago. I deliver them in weeks. Alone. For a fixed price.</p>
-        <p>That is not a pitch. It is what happens when deep business experience meets the best tools available. The client gets both — the business judgment and the build.</p>
+    <div class="founding-inner">
+      <div class="founding-badge">Founding client offer</div>
+      <h2 class="section-title" style="margin-bottom: 16px;">Two builds. One price.<br><em>For the right five clients.</em></h2>
+      <p class="founding-body">
+        We're taking on five founding clients this quarter. For each one, we'll build two systems — the one you come in with, and the next one we find together once the first is running. <strong>Same fixed price. Two problems solved.</strong>
+      </p>
+      <div class="founding-criteria">
+        <div class="founding-criteria-label">Who this is for</div>
+        <div class="founding-criteria-grid">
+          <div class="founding-criterion">
+            <div class="founding-dot"></div>
+            <span>A business with real, recurring processes — not a one-time project</span>
+          </div>
+          <div class="founding-criterion">
+            <div class="founding-dot"></div>
+            <span>A decision-maker who can move quickly — call to proposal to go-ahead in days</span>
+          </div>
+          <div class="founding-criterion">
+            <div class="founding-dot"></div>
+            <span>Willing to be referenced — we'll anonymise the case study if needed, but we want to tell the story</span>
+          </div>
+          <div class="founding-criterion">
+            <div class="founding-dot"></div>
+            <span>Team of 5–100 people. Revenue-generating business. Real pain, not a curiosity project</span>
+          </div>
+        </div>
       </div>
-      <div class="about-credentials">
-        <div class="credential">
-          <div class="credential-dot"></div>
-          <div class="credential-text">
-            25 years in agencies and client-side
-            <span>Creative direction, strategy, operations — I have sat on both sides of the table</span>
+      <div class="founding-cta">
+        <a href="https://calendly.com/kmo-betterstory/discovery" class="btn-primary">Claim a founding client spot</a>
+        <span class="founding-slots">3 of 5 spots remaining</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI CAPABILITY BLOCK -->
+<section class="ai-possible">
+  <div class="container">
+    <div class="ai-possible-inner">
+      <div class="ai-possible-left">
+        <div class="section-eyebrow" style="color: #7ab891;">Why now</div>
+        <h2 class="ai-possible-heading">This is only possible<br>because of AI — and because<br>we mastered it early.</h2>
+      </div>
+      <div class="ai-possible-right">
+        <p>The breakthrough is not that AI can write emails or summarise documents. Your team is already doing that. The breakthrough is that AI can now understand business context, connect existing tools, handle complex multi-step decisions, and deploy working systems — without a traditional engineering team and without enterprise budgets.</p>
+        <p>Most agencies are still catching up. We went deep two years ago — not experimenting, mastering. Every system we build uses the same stack powering the fastest-moving companies in the world. You get that capability at a fraction of the cost, because we built the expertise so you do not have to.</p>
+        <div class="ai-possible-stats">
+          <div class="ai-stat">
+            <div class="ai-stat-num">2 yrs</div>
+            <div class="ai-stat-label">ahead of most agencies on AI tooling</div>
           </div>
-        </div>
-        <div class="credential">
-          <div class="credential-dot"></div>
-          <div class="credential-text">
-            Production AI systems, not demos
-            <span>Everything I build runs in production, handles real data, and keeps working after I leave</span>
+          <div class="ai-stat">
+            <div class="ai-stat-num">Days</div>
+            <div class="ai-stat-label">to ship what used to take months</div>
           </div>
-        </div>
-        <div class="credential">
-          <div class="credential-dot"></div>
-          <div class="credential-text">
-            Fixed price, not hourly
-            <span>I absorb the risk of estimation. You know what you're paying before we start</span>
-          </div>
-        </div>
-        <div class="credential">
-          <div class="credential-dot"></div>
-          <div class="credential-text">
-            You own everything we build
-            <span>Code, documentation, credentials. No lock-in. No dependency on us to keep the lights on</span>
-          </div>
-        </div>
-        <div class="credential">
-          <div class="credential-dot"></div>
-          <div class="credential-text">
-            Toronto-based, works everywhere
-            <span>Remote-first. Clients in Canada and the US</span>
+          <div class="ai-stat">
+            <div class="ai-stat-num">10×</div>
+            <div class="ai-stat-label">the output at a fraction of the cost</div>
           </div>
         </div>
       </div>
@@ -1478,6 +1726,67 @@
     </div>
   </section>
 </div>
+
+<!-- ABOUT / LETTER -->
+<section class="about">
+  <div class="container">
+    <div class="section-eyebrow">A note from our founder</div>
+
+    <div class="letter-prose">
+      <h2 class="letter-heading">I have spent 25 years inside other people's businesses. The puzzle never gets old.</h2>
+
+      <p>Creative director. Strategist. The person brought in when something is clearly broken and no one can agree on what it is. I have written the briefs, managed the budgets, presented to the C-suite, and shipped things that had to work. I have sat across the table from founders who are drowning in process, executives whose teams are working harder every quarter but getting less done, and operators who know something is wrong — they just can't point to it.</p>
+
+      <p>That is the puzzle I find irresistible. Not the technology. The <em>business</em>. The human system underneath — where the friction lives, where the time goes, what would actually change if you fixed it.</p>
+
+      <p>For most of my career, I could diagnose the problem clearly. The fix, though — the real fix — required a development team, a six-figure budget, and months of lead time most businesses couldn't justify. So the friction stayed. People worked around it. Another person got hired to absorb it.</p>
+
+      <p><strong>That has changed.</strong> And it has changed so fast that most businesses — and most agencies — haven't caught up yet.</p>
+
+      <p>What we build now in days would have taken a team of five and six months two years ago. Not because we work harder. Because we spent the last two years going deep on the tools that collapsed that gap — mastering them, not experimenting with them — and we know exactly how to apply them to the kind of problems I have been solving my whole career.</p>
+
+      <p>BetterStory exists because solving the business puzzle is what I was built for, and now I finally have the tools to match the ambition.</p>
+
+      <div class="letter-sig">
+        <strong>Kerry Morrison</strong>
+        <span>Founder, BetterStory · Toronto</span>
+      </div>
+    </div>
+
+    <div class="cred-boxes">
+      <div class="cred-box">
+        <div class="cred-box-num">25 yrs</div>
+        <div class="cred-box-title">Agencies &amp; client-side</div>
+        <div class="cred-box-body">Creative direction, strategy, operations — both sides of the table.</div>
+      </div>
+      <div class="cred-box">
+        <div class="cred-box-num">100%</div>
+        <div class="cred-box-title">Production, not prototypes</div>
+        <div class="cred-box-body">Every system runs on real data and keeps working after we leave.</div>
+      </div>
+      <div class="cred-box">
+        <div class="cred-box-num">Fixed</div>
+        <div class="cred-box-title">Price, not hourly</div>
+        <div class="cred-box-body">We absorb the risk of estimation. You know the number before we start.</div>
+      </div>
+      <div class="cred-box">
+        <div class="cred-box-num">Yours</div>
+        <div class="cred-box-title">Everything we build</div>
+        <div class="cred-box-body">Code, docs, credentials. No lock-in. No ongoing dependency on us.</div>
+      </div>
+      <div class="cred-box">
+        <div class="cred-box-num">CA / US</div>
+        <div class="cred-box-title">Remote-first</div>
+        <div class="cred-box-body">Toronto-based team. Clients across Canada and the United States.</div>
+      </div>
+      <div class="cred-box">
+        <div class="cred-box-num">Days</div>
+        <div class="cred-box-title">Not months</div>
+        <div class="cred-box-body">What used to require a team and a six-month runway, we deliver in weeks.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
